@@ -12,21 +12,19 @@ A flexible, multi-timezone calendar scheduling component.
 
 ## Installation
 
-```bash
-npm install
-```
+Copy / Download the folder @/calendar and paste in your project!
 
 ## Available Components
 
 Located in `src/components/calendar/`:
 
-| Component | File | Description |
-|-----------|------|-------------|
-| `CalendarScheduler` | `calendar.tsx` | Main calendar component with all views |
-| `MonthView` | `month-view.tsx` | Month grid view |
-| `WeekView` | `week-view.tsx` | Week schedule view |
-| `DayView` | `day-view.tsx` | Single day view |
-| `AgendaView` | `agenda-view.tsx` | Agenda list view |
+| Component           | File              | Description                            |
+| ------------------- | ----------------- | -------------------------------------- |
+| `CalendarScheduler` | `calendar.tsx`    | Main calendar component with all views |
+| `MonthView`         | `month-view.tsx`  | Month grid view                        |
+| `WeekView`          | `week-view.tsx`   | Week schedule view                     |
+| `DayView`           | `day-view.tsx`    | Single day view                        |
+| `AgendaView`        | `agenda-view.tsx` | Agenda list view                       |
 
 ## Usage
 
