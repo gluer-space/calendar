@@ -14,7 +14,39 @@ A flexible, multi-timezone calendar scheduling component.
 
 ## Installation
 
-Copy / Download the folder @/calendar and paste in your project!
+### 1. Install dependencies
+
+This component requires the following packages:
+
+```bash
+npm install date-fns date-fns-tz lucide-react
+```
+
+### 2. Add shadcn/ui components
+
+This component uses shadcn/ui. Install the required components:
+
+```bash
+npx shadcn@latest add button
+npx shadcn@latest add select
+npx shadcn@latest add command
+npx shadcn@latest add popover
+npx shadcn@latest add tooltip
+```
+
+### 3. Copy the calendar component
+
+Copy the `src/components/calendar/` folder to your project:
+
+```bash
+cp -r src/components/calendar your-project/src/components/
+```
+
+Ensure your project has:
+
+- Tailwind CSS configured
+- `@/components/ui/` alias set up for shadcn/ui components
+- `lucide-react` icons available
 
 ## Available Components
 
