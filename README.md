@@ -2,6 +2,8 @@
 
 A flexible, multi-timezone calendar scheduling component.
 
+![Calendar Scheduler Preview](public/preview.png)
+
 ## Features
 
 - **Multiple Views**: Month, Week, Day, and Agenda views

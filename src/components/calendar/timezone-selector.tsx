@@ -42,7 +42,7 @@ export function TimezoneSelect({
         {label}:
       </span>*/}
       <Select value={value} onValueChange={onChange}>
-        <SelectTrigger className="h-7 text-xs md:w-[180px] w-full border-0 bg-muted/60 focus:ring-0 focus:ring-offset-0">
+        <SelectTrigger className="h-7 text-xs md:w-[180px] w-full border-0 bg-muted! focus:ring-0 focus:ring-offset-0">
           <SelectValue>{value}</SelectValue>
         </SelectTrigger>
         <SelectContent className="max-h-72">
