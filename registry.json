@@ -18,51 +18,51 @@
       "dependencies": ["date-fns", "date-fns-tz", "lucide-react"],
       "files": [
         {
-          "path": "https://raw.githubusercontent.com/gluer-space/calendar/main/registry/calendar/calendar.tsx",
+          "path": "calendar/calendar.tsx",
           "type": "registry:component"
         },
         {
-          "path": "https://raw.githubusercontent.com/gluer-space/calendar/main/registry/calendar/month-view.tsx",
+          "path": "calendar/month-view.tsx",
           "type": "registry:component"
         },
         {
-          "path": "https://raw.githubusercontent.com/gluer-space/calendar/main/registry/calendar/week-view.tsx",
+          "path": "calendar/week-view.tsx",
           "type": "registry:component"
         },
         {
-          "path": "https://raw.githubusercontent.com/gluer-space/calendar/main/registry/calendar/day-view.tsx",
+          "path": "calendar/day-view.tsx",
           "type": "registry:component"
         },
         {
-          "path": "https://raw.githubusercontent.com/gluer-space/calendar/main/registry/calendar/agenda-view.tsx",
+          "path": "calendar/agenda-view.tsx",
           "type": "registry:component"
         },
         {
-          "path": "https://raw.githubusercontent.com/gluer-space/calendar/main/registry/calendar/timezone-selector.tsx",
+          "path": "calendar/timezone-selector.tsx",
           "type": "registry:component"
         },
         {
-          "path": "https://raw.githubusercontent.com/gluer-space/calendar/main/registry/calendar/view-switcher.tsx",
+          "path": "calendar/view-switcher.tsx",
           "type": "registry:component"
         },
         {
-          "path": "https://raw.githubusercontent.com/gluer-space/calendar/main/registry/calendar/slot-btn.tsx",
+          "path": "calendar/slot-btn.tsx",
           "type": "registry:component"
         },
         {
-          "path": "https://raw.githubusercontent.com/gluer-space/calendar/main/registry/calendar/tooltip.tsx",
+          "path": "calendar/tooltip.tsx",
           "type": "registry:component"
         },
         {
-          "path": "https://raw.githubusercontent.com/gluer-space/calendar/main/registry/calendar/helpers.ts",
+          "path": "calendar/helpers.ts",
           "type": "registry:lib"
         },
         {
-          "path": "https://raw.githubusercontent.com/gluer-space/calendar/main/registry/calendar/timezones.ts",
+          "path": "calendar/timezones.ts",
           "type": "registry:lib"
         },
         {
-          "path": "https://raw.githubusercontent.com/gluer-space/calendar/main/registry/calendar/types.ts",
+          "path": "calendar/types.ts",
           "type": "registry:lib"
         }
       ]
