@@ -1,36 +1,60 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Calendar Scheduler
 
-## Getting Started
+A flexible, multi-timezone calendar scheduling component.
 
-First, run the development server:
+## Features
+
+- **Multiple Views**: Month, Week, Day, and Agenda views
+- **Multi-timezone Support**: Admins set availability in their timezone; viewers see times converted to their local timezone
+- **Slot-based Booking**: Configurable slot durations (15, 30, 60 min)
+- **Availability Windows**: Define recurring weekly availability
+- **Booked Slot Tracking**: Mark slots as unavailable
+
+## Installation
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Available Components
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Located in `src/components/calendar/`:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Component | File | Description |
+|-----------|------|-------------|
+| `CalendarScheduler` | `calendar.tsx` | Main calendar component with all views |
+| `MonthView` | `month-view.tsx` | Month grid view |
+| `WeekView` | `week-view.tsx` | Week schedule view |
+| `DayView` | `day-view.tsx` | Single day view |
+| `AgendaView` | `agenda-view.tsx` | Agenda list view |
 
-## Learn More
+## Usage
 
-To learn more about Next.js, take a look at the following resources:
+```tsx
+import { CalendarScheduler } from "@/components/calendar";
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+<CalendarScheduler
+  availability={[
+    { day: "monday", startTime: "09:00", endTime: "17:00", enabled: true },
+    { day: "wednesday", startTime: "10:00", endTime: "15:00", enabled: true },
+  ]}
+  bookedSlots={[{ date: "2024-03-15", time: "10:00" }]}
+  slotDuration={30}
+  adminTimeZone="America/New_York"
+  onDateSelect={(date) => setSelectedDate(date)}
+  onSlotSelect={(date, time) => handleBooking(date, time)}
+/>;
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Props
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+| Prop                    | Type                                 | Required | Description                    |
+| ----------------------- | ------------------------------------ | -------- | ------------------------------ |
+| `availability`          | `Availability[]`                     | Yes      | Weekly availability windows    |
+| `bookedSlots`           | `BookedSlot[]`                       | No       | Already-booked slots           |
+| `slotDuration`          | `number`                             | Yes      | Slot duration in minutes       |
+| `adminTimeZone`         | `string`                             | No       | Admin's timezone (IANA format) |
+| `defaultViewerTimeZone` | `string`                             | No       | Viewer's timezone              |
+| `selectedDate`          | `Date`                               | No       | Initially selected date        |
+| `onDateSelect`          | `(date: Date) => void`               | Yes      | Date selection callback        |
+| `onSlotSelect`          | `(date: Date, time: string) => void` | Yes      | Slot selection callback        |
