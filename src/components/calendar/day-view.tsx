@@ -1,3 +1,17 @@
+/**
+ * DayView - Single Day Calendar View
+ *
+ * Displays all available time slots for a single selected date in a scrollable list.
+ * Shows both viewer time and host time (when timezones differ).
+ * Handles past dates, unavailable days, and booked slots gracefully.
+ *
+ * Features:
+ * - Shows available slots as clickable buttons
+ * - Disables past time slots and booked slots
+ * - Displays booked count
+ * - Tooltip on hover showing both timezones
+ */
+
 import { format, isBefore } from "date-fns";
 import { Calendar1, Clock, Calendar } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -13,6 +27,10 @@ import { getAvailForDate, getSlotsForDate, isPastDate } from "./helpers";
 import { SlotTip } from "./tooltip";
 import type { Availability, BookedSlot } from "./types";
 
+/**
+ * Renders the day view for a specific date.
+ * Shows a list of time slots that users can click to book.
+ */
 export function DayView({
   current,
   availability,

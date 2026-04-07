@@ -1,3 +1,17 @@
+/**
+ * AgendaView - Upcoming Availability List View
+ *
+ * Shows the next 30 days of available time slots in a chronological list.
+ * Each day with availability is shown as a group with clickable time buttons.
+ * Filters out days with no availability.
+ *
+ * Features:
+ * - Shows next 30 days from today (or current date if in future)
+ * - Only displays days with available slots
+ * - Shows booked count per day
+ * - Chronological order makes it easy to find next available slot
+ */
+
 import { addDays, format, isBefore, isToday, startOfDay } from "date-fns";
 import { Calendar } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -12,6 +26,9 @@ import { getAvailForDate, getSlotsForDate } from "./helpers";
 import { SlotTip } from "./tooltip";
 import type { Availability, BookedSlot } from "./types";
 
+/**
+ * Renders the agenda view showing upcoming availability chronologically.
+ */
 export function AgendaView({
   current,
   availability,

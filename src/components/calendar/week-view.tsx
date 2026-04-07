@@ -1,3 +1,17 @@
+/**
+ * WeekView - Weekly Calendar View
+ *
+ * Displays a 7-day grid view with time slots on the Y-axis and days on the X-axis.
+ * Shows all unique time slots across the week, allowing users to see availability
+ * patterns at a glance.
+ *
+ * Features:
+ * - Grid layout: time labels on left, 7 day columns
+ * - Shows both viewer and host timezone times
+ * - Color-coded slots: green=available, red=booked, gray=past
+ * - Clickable day headers to select a specific date
+ */
+
 import {
   addDays,
   format,
@@ -20,6 +34,10 @@ import {
 } from "./helpers";
 import type { Availability, BookedSlot } from "./types";
 
+/**
+ * Renders the week view showing 7 days in a grid.
+ * Each row represents a unique time slot across the week.
+ */
 export function WeekView({
   current,
   selectedDate,

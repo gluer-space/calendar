@@ -1,3 +1,27 @@
+/**
+ * CalendarScheduler - Main Calendar Component
+ *
+ * This is the top-level component that orchestrates the entire calendar scheduling experience.
+ * It manages:
+ * - View state (month/week/day/agenda)
+ * - Date navigation (previous/next based on current view)
+ * - Timezone selection (viewer can change their timezone)
+ * - Rendering the appropriate sub-view component
+ *
+ * @example
+ * <CalendarScheduler
+ *   availability={[
+ *     { day: 'monday', startTime: '09:00', endTime: '17:00', enabled: true },
+ *     { day: 'wednesday', startTime: '10:00', endTime: '15:00', enabled: true },
+ *   ]}
+ *   bookedSlots={[{ date: '2024-03-15', time: '10:00' }]}
+ *   slotDuration={30}
+ *   adminTimeZone="America/New_York"
+ *   onDateSelect={(date) => setSelectedDate(date)}
+ *   onSlotSelect={(date, time) => handleBooking(date, time)}
+ * />
+ */
+
 "use client";
 
 import {
@@ -26,6 +50,10 @@ import type { CalendarSchedulerProps, ViewType } from "./types";
 import { ViewSwitcher } from "./view-switcher";
 import { WeekView } from "./week-view";
 
+/**
+ * Internal component that handles the calendar navigation logic.
+ * Manages view state, current date, and timezone preferences.
+ */
 export function CalendarScheduler({
   availability,
   bookedSlots = [],
@@ -36,17 +64,27 @@ export function CalendarScheduler({
   defaultViewerTimeZone,
   slotDuration,
 }: CalendarSchedulerProps) {
+  // Current view mode (defaults to month view)
   const [view, setView] = useState<ViewType>("month");
+  // The date currently being displayed (for navigation)
   const [current, setCurrent] = useState<Date>(selectedDate ?? new Date());
+  // Viewer's timezone state (dual state for sync purposes)
   const [vTz, setVtZ] = useState(
     defaultViewerTimeZone ?? detectBrowserTimezone(),
   );
   const [viewerTZ, setViewerTZ] = useState<string>(vTz);
+  /** Handler for timezone changes - updates both state variables */
   function handleZoneChange(tz: string) {
     setViewerTZ(tz);
     setVtZ(tz);
   }
 
+  /**
+   * Navigates forward or backward based on current view.
+   * Month/Agenda: moves by 1 month
+   * Week: moves by 1 week
+   * Day: moves by 1 day
+   */
   function navigate(dir: 1 | -1) {
     if (view === "month")
       setCurrent((c) => (dir === 1 ? addMonths(c, 1) : subMonths(c, 1)));
@@ -58,6 +96,7 @@ export function CalendarScheduler({
       setCurrent((c) => (dir === 1 ? addMonths(c, 1) : subMonths(c, 1)));
   }
 
+  /** Generates the title text for the header based on current view and date */
   function getTitle() {
     if (view === "month") return format(current, "MMMM yyyy");
     if (view === "week") {
@@ -69,12 +108,14 @@ export function CalendarScheduler({
     return `Agenda – ${format(current, "MMMM yyyy")}`;
   }
 
+  // Resolve human-readable timezone labels for the footer
   const adminLabel =
     ALL_TIMEZONES.find((z) => z.value === adminTimeZone)?.label ??
     adminTimeZone;
   const viewerLabel =
     ALL_TIMEZONES.find((z) => z.value === viewerTZ)?.label ?? viewerTZ;
 
+  /** Common props passed to all view components */
   const sharedProps = {
     current,
     availability,
