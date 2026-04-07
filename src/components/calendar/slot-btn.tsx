@@ -47,16 +47,16 @@ export function SlotBtn({
         "bg-background border-border hover:border-primary hover:bg-primary/5 hover:text-primary active:scale-95",
       )}
     >
-      {isPast && (
+      {isPast && !slot.booked && (
         <span className="block mb-1 text-[9px] text-muted-foreground leading-tight mt-0.5">
           Past
         </span>
       )}
-      {/*{slot.booked && (
+      {slot.booked && (
         <span className="block mb-1 text-[9px] text-muted-foreground leading-tight mt-0.5">
           Booked
         </span>
-      )}*/}
+      )}
       <span className="block">{slot.displayTime}</span>
       {adminTZ !== viewerTZ && (
         <span className="block text-[9px] text-muted-foreground leading-tight mt-0.5">
