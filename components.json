@@ -20,10 +20,5 @@
     "hooks": "@/hooks"
   },
   "menuColor": "default",
-  "menuAccent": "subtle",
-  "registries": {
-    "local": {
-      "url": "file:./registry.json"
-    }
-  }
+  "menuAccent": "subtle"
 }
