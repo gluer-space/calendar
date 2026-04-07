@@ -1,5 +1,6 @@
 {
-  "name": "gluer-admin",
+  "name": "calendar",
+  "author": "https://github.com/r2hu1",
   "version": "0.1.0",
   "private": true,
   "scripts": {
