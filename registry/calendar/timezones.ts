@@ -1,0 +1,136 @@
+/**
+ * Timezone Constants
+ *
+ * Defines a curated list of commonly-used IANA timezones, organized by geographic region.
+ * Used by the timezone selector component to let viewers choose their local timezone.
+ *
+ * Each timezone entry includes:
+ * - value: The IANA timezone identifier (e.g., "America/New_York")
+ * - label: A human-readable display name (e.g., "New York (Eastern Time)")
+ */
+
+export const TIMEZONE_GROUPS: {
+  region: string;
+  zones: { value: string; label: string }[];
+}[] = [
+  {
+    region: "Americas",
+    zones: [
+      { value: "America/New_York", label: "New York (Eastern Time)" },
+      { value: "America/Chicago", label: "Chicago (Central Time)" },
+      { value: "America/Denver", label: "Denver (Mountain Time)" },
+      { value: "America/Los_Angeles", label: "Los Angeles (Pacific Time)" },
+      { value: "America/Anchorage", label: "Anchorage (Alaska Time)" },
+      { value: "America/Honolulu", label: "Honolulu (Hawaii Time)" },
+      { value: "America/Toronto", label: "Toronto (Eastern Time)" },
+      { value: "America/Vancouver", label: "Vancouver (Pacific Time)" },
+      { value: "America/Mexico_City", label: "Mexico City (Central Time)" },
+      { value: "America/Bogota", label: "Bogotá (COT)" },
+      { value: "America/Lima", label: "Lima (PET)" },
+      { value: "America/Santiago", label: "Santiago (CLT)" },
+      { value: "America/Sao_Paulo", label: "São Paulo (BRT)" },
+      { value: "America/Argentina/Buenos_Aires", label: "Buenos Aires (ART)" },
+      { value: "America/Caracas", label: "Caracas (VET)" },
+    ],
+  },
+  {
+    region: "Europe",
+    zones: [
+      { value: "Europe/London", label: "London (GMT/BST)" },
+      { value: "Europe/Dublin", label: "Dublin (GMT/IST)" },
+      { value: "Europe/Lisbon", label: "Lisbon (WET)" },
+      { value: "Europe/Paris", label: "Paris (CET)" },
+      { value: "Europe/Berlin", label: "Berlin (CET)" },
+      { value: "Europe/Amsterdam", label: "Amsterdam (CET)" },
+      { value: "Europe/Brussels", label: "Brussels (CET)" },
+      { value: "Europe/Madrid", label: "Madrid (CET)" },
+      { value: "Europe/Rome", label: "Rome (CET)" },
+      { value: "Europe/Zurich", label: "Zurich (CET)" },
+      { value: "Europe/Stockholm", label: "Stockholm (CET)" },
+      { value: "Europe/Helsinki", label: "Helsinki (EET)" },
+      { value: "Europe/Warsaw", label: "Warsaw (CET)" },
+      { value: "Europe/Athens", label: "Athens (EET)" },
+      { value: "Europe/Istanbul", label: "Istanbul (TRT)" },
+      { value: "Europe/Moscow", label: "Moscow (MSK)" },
+      { value: "Europe/Kyiv", label: "Kyiv (EET)" },
+    ],
+  },
+  {
+    region: "Asia & Pacific",
+    zones: [
+      { value: "Asia/Dubai", label: "Dubai (GST)" },
+      { value: "Asia/Karachi", label: "Karachi (PKT)" },
+      { value: "Asia/Kolkata", label: "India Standard Time (IST)" },
+      { value: "Asia/Dhaka", label: "Dhaka (BST)" },
+      { value: "Asia/Colombo", label: "Colombo (SLST)" },
+      { value: "Asia/Kathmandu", label: "Kathmandu (NPT)" },
+      { value: "Asia/Bangkok", label: "Bangkok (ICT)" },
+      { value: "Asia/Singapore", label: "Singapore (SGT)" },
+      { value: "Asia/Kuala_Lumpur", label: "Kuala Lumpur (MYT)" },
+      { value: "Asia/Jakarta", label: "Jakarta (WIB)" },
+      { value: "Asia/Manila", label: "Manila (PHT)" },
+      { value: "Asia/Shanghai", label: "China (CST)" },
+      { value: "Asia/Hong_Kong", label: "Hong Kong (HKT)" },
+      { value: "Asia/Taipei", label: "Taipei (CST)" },
+      { value: "Asia/Tokyo", label: "Tokyo (JST)" },
+      { value: "Asia/Seoul", label: "Seoul (KST)" },
+      { value: "Asia/Almaty", label: "Almaty (ALMT)" },
+      { value: "Asia/Tashkent", label: "Tashkent (UZT)" },
+      { value: "Asia/Riyadh", label: "Riyadh (AST)" },
+      { value: "Asia/Tehran", label: "Tehran (IRST)" },
+      { value: "Asia/Tbilisi", label: "Tbilisi (GET)" },
+      { value: "Asia/Yerevan", label: "Yerevan (AMT)" },
+      { value: "Australia/Perth", label: "Perth (AWST)" },
+      { value: "Australia/Darwin", label: "Darwin (ACST)" },
+      { value: "Australia/Adelaide", label: "Adelaide (ACST)" },
+      { value: "Australia/Sydney", label: "Sydney (AEST)" },
+      { value: "Australia/Melbourne", label: "Melbourne (AEST)" },
+      { value: "Australia/Brisbane", label: "Brisbane (AEST)" },
+      { value: "Pacific/Auckland", label: "Auckland (NZST)" },
+      { value: "Pacific/Fiji", label: "Fiji (FJT)" },
+      { value: "Pacific/Guam", label: "Guam (ChST)" },
+    ],
+  },
+  {
+    region: "Africa & Middle East",
+    zones: [
+      { value: "Africa/Cairo", label: "Cairo (EET)" },
+      { value: "Africa/Johannesburg", label: "Johannesburg (SAST)" },
+      { value: "Africa/Lagos", label: "Lagos (WAT)" },
+      { value: "Africa/Nairobi", label: "Nairobi (EAT)" },
+      { value: "Africa/Casablanca", label: "Casablanca (WET)" },
+      { value: "Africa/Accra", label: "Accra (GMT)" },
+      { value: "Africa/Addis_Ababa", label: "Addis Ababa (EAT)" },
+      { value: "Africa/Dar_es_Salaam", label: "Dar es Salaam (EAT)" },
+      { value: "Africa/Khartoum", label: "Khartoum (CAT)" },
+      { value: "Africa/Tunis", label: "Tunis (CET)" },
+    ],
+  },
+  {
+    region: "UTC / Other",
+    zones: [
+      { value: "Etc/UTC", label: "UTC" },
+      { value: "Etc/GMT+12", label: "UTC-12" },
+      { value: "Etc/GMT+11", label: "UTC-11" },
+      { value: "Etc/GMT+10", label: "UTC-10" },
+      { value: "Etc/GMT-1", label: "UTC+1" },
+      { value: "Etc/GMT-2", label: "UTC+2" },
+      { value: "Etc/GMT-3", label: "UTC+3" },
+      { value: "Etc/GMT-4", label: "UTC+4" },
+      { value: "Etc/GMT-5", label: "UTC+5" },
+      { value: "Etc/GMT-6", label: "UTC+6" },
+      { value: "Etc/GMT-7", label: "UTC+7" },
+      { value: "Etc/GMT-8", label: "UTC+8" },
+      { value: "Etc/GMT-9", label: "UTC+9" },
+      { value: "Etc/GMT-10", label: "UTC+10" },
+      { value: "Etc/GMT-11", label: "UTC+11" },
+      { value: "Etc/GMT-12", label: "UTC+12" },
+    ],
+  },
+];
+
+/**
+ * Flattened array of all available timezones for easy lookup.
+ * Combines all regions into a single list.
+ */
+export const ALL_TIMEZONES = TIMEZONE_GROUPS.flatMap((g) => g.zones);
