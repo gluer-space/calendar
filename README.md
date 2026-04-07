@@ -14,27 +14,33 @@ A flexible, multi-timezone calendar scheduling component.
 
 ## Installation
 
-### 1. Install dependencies
+### Quick Install (shadcn registry)
 
-This component requires the following packages:
+```bash
+npx shadcn@latest add https://raw.githubusercontent.com/gluer-space/calendar/main/registry.json
+```
+
+Or clone the repo and install locally:
+
+```bash
+npx shadcn@latest add calendar-scheduler
+```
+
+### Manual Installation
+
+**1. Install dependencies**
 
 ```bash
 npm install date-fns date-fns-tz lucide-react
 ```
 
-### 2. Add shadcn/ui components
-
-This component uses shadcn/ui. Install the required components:
+**2. Add shadcn/ui components**
 
 ```bash
-npx shadcn@latest add button
-npx shadcn@latest add select
-npx shadcn@latest add command
-npx shadcn@latest add popover
-npx shadcn@latest add tooltip
+npx shadcn@latest add button select command popover tooltip
 ```
 
-### 3. Copy the calendar component
+**3. Copy the calendar component**
 
 Copy the `src/components/calendar/` folder to your project:
 
