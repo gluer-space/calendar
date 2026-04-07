@@ -2,7 +2,7 @@
 
 A flexible, multi-timezone calendar scheduling component.
 
-![Calendar Scheduler Preview](public/preview.png)
+![Calendar Scheduler Preview](public/prv.png)
 
 ## Features
 
