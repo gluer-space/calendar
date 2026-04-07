@@ -17,7 +17,7 @@ A flexible, multi-timezone calendar scheduling component.
 ### Quick Install (shadcn registry)
 
 ```bash
-npx shadcn@latest add https://raw.githubusercontent.com/gluer-space/calendar/main/registry/r/calendar-scheduler.json
+npx shadcn@latest add https://raw.githubusercontent.com/gluer-space/calendar/main/public/r/registry.json
 ```
 
 ### Manual Installation
