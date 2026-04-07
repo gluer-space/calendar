@@ -158,8 +158,8 @@ export function WeekView({
                         ).includes(adminTime)
                       : false;
                     const booked = isBooked(day, adminTime, bookedSlots);
-                    const isPast =
-                      isPastDate(day) || isBefore(new Date(day), new Date());
+                    const slotUtc = slotToUtc(day, adminTime, adminTZ);
+                    const isPast = isBefore(slotUtc, new Date());
                     if (!exists)
                       return (
                         <div
