@@ -17,7 +17,11 @@ A flexible, multi-timezone calendar scheduling component.
 ### Quick Install (shadcn registry)
 
 ```bash
-npx shadcn@latest add https://raw.githubusercontent.com/gluer-space/calendar/main/public/r/registry.json
+bunx shadcn@latest add https://raw.githubusercontent.com/gluer-space/calendar/main/public/r/calendar-scheduler.json
+or
+npx shadcn@latest add https://raw.githubusercontent.com/gluer-space/calendar/main/public/r/calendar-scheduler.json
+or
+pnpx shadcn@latest add https://raw.githubusercontent.com/gluer-space/calendar/main/public/r/calendar-scheduler.json
 ```
 
 ### Manual Installation
@@ -90,3 +94,14 @@ import { CalendarScheduler } from "@/components/calendar";
 | `selectedDate`          | `Date`                               | No       | Initially selected date        |
 | `onDateSelect`          | `(date: Date) => void`               | Yes      | Date selection callback        |
 | `onSlotSelect`          | `(date: Date, time: string) => void` | Yes      | Slot selection callback        |
+
+## License
+
+This project is licensed under a **Non-Commercial License**. 
+
+- Free for personal, educational, and non-profit use
+- Commercial use requires a separate license
+
+For commercial licensing inquiries, please contact: **rrahulrajput2006@gmail.com**
+
+See the [LICENSE](LICENSE) file for full terms and conditions.
